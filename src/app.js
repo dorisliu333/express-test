@@ -14,6 +14,10 @@ const morganLog = process.env.NODE_ENV === 'production' ? morgan('common'):morga
 app.use(morganLog)
 app.use(cors());
 app.use(express.json())
+app.get('/',(req,res)=>{
+    res.send("welcome to jr cms!")
+})
+
 
 app.use('/api',router)
 app.use(errorHandler)
